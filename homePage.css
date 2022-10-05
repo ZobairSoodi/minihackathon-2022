@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 
@@ -27,7 +30,7 @@
 
 .offreButton{
     width: 150px;
-    height:30px;
+    height:40px;
     border-radius: 40px;
     border: none;
     margin-left: 30px;
@@ -36,13 +39,25 @@
     font-weight: 500;
     background-color: black;
     color: white;
+    cursor: pointer;
+    padding: 10px;
 }
 
 
 .typingCourse{
     background-color: white;
-    border: solid 1.5px;
+    border: solid 2px;
     color: black;
+}
+.offreButton:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid;
+}
+
+.typingCourse:hover{
+    color: white;
+    background-color: black;
 }
 
 .header{
@@ -63,8 +78,12 @@
     text-align: center;
 }
 .headerContainerText{
+    text-align: start;
+    line-height: 35px;
     max-width: 500px;
-    margin: 16vh 30px ;
+    margin: 16vh 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 .rightDiv{
@@ -79,9 +98,84 @@
 .main{
     display: block;
     height: 70vh;
+    margin-bottom: 20vh;
 }
 
 .firstTitle{
+    text-align: center;
     margin: 50px 30px;
-    max-width: 300px;
+    max-width: 670px;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
+
+
+.test{
+    display: grid;
+    place-items: center;
+}
+
+.tryTest{
+    text-align: center;
+    display: block;
+    background-color: #3A82D2;
+    opacity: 78%;
+    color: white;
+    height: 30vh;
+    width: 90vh;
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+
+.testText{
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding: 50px;
+}
+
+
+.inputTest{
+    height: 45px;
+    width: 400px;
+    border-radius: 30px;
+    border: none;
+    padding: 5px;
+    text-align: center;
+}
+
+
+.errorAndScore{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.level{
+    height: 70%;
+    display: grid;
+    place-items: center;
+}
+
+
+.mainLevel{
+    width: 120vh;
+}
+
+.selectLevel{
+    display: inline-block;
+    max-width: 300px;
+    height: 50px;
+    color: #0056A3;
+    font-size: 30px;
+    letter-spacing: 2px;
+
+}
+
+/* .levelDiv{
+    display: flex;
+    justify-content: space-around;
+} */
