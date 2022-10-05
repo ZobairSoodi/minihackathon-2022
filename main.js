@@ -61,7 +61,10 @@ document.body.addEventListener("keypress", (e) => {
         if (inp.value[len].charCodeAt(0) == 32 && text.innerText[len] == String.fromCharCode(160)) {
             text.children[len].style.backgroundColor = "green";
         }
-        if (inp.value[len] == text.innerText[len]) {
+        else if (inp.value[len].charCodeAt(0) != 32 && text.innerText[len] == String.fromCharCode(160)) {
+            text.children[len].style.backgroundColor = "red";
+        }
+        else if (inp.value[len] == text.innerText[len]) {
             text.children[len].style.color = "green";
         }
         else {
@@ -111,9 +114,13 @@ start_btn.addEventListener("click", () => {
         start_btn.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';
         pause = false;
     }
+    var temp_btn = document.createElement("button");
+    document.body.appendChild(temp_btn);
+    temp_btn.focus();
+    temp_btn.remove();
 })
 
-// TIMER
+// execute the timer function every second
 setInterval(resetTimer, 1000);
 
 // Reset timer
@@ -129,29 +136,28 @@ function resetTimer() {
     }
 }
 
-        // inp.addEventListener("keyup", (e) => {
-        //     if()
-        //     if (excluded.includes(Number(e.keyCode))) {
-        //         return;
-        //     }
-        //     else if(e.keyCode == 8){
-        //         text.children[inp.value.length].style.color = "black";
-        //     }
-        //     else if (inp.value[inp.value.length - 1] == text.innerText[inp.value.length - 1]) {
-        //         text.children[inp.value.length - 1].style.color = "green";
+// Reset the game
+function resetGame() {
+    // reset text
+    currentPosition = 0;
+    currentText = textObj[currentPosition].text;
+    fillText();
 
-        //     }
-        //     else {
-        //         text.children[inp.value.length - 1].style.color = "red";
-        //     }
-        // })
+    // reset timer
+    time = textObj[currentPosition].time;
+    timer_el.innerHTML = time;
 
-        // inp.addEventListener("click", ()=>{
-        //     var end = inp.value.length;
-        //     var temp = document.createElement("input");
-        //     document.body.appendChild(temp);
-        //     temp.focus();
-        //     inp.setSelectionRange(end, end);
-        //     inp.focus();
-        //     temp.remove();
-        // })
+    // reset score
+    score = 0;
+    score_el.innerHTML = 0;
+
+    // hide win and lose
+    win.style.zIndex = -10;
+    win.style.opacity = 0;
+    lose.style.zIndex = -10;
+    lose.style.opacity = 0;
+
+    // pause the game
+    pause = true;
+    start_btn.innerHTML = '<i class="fa-solid fa-circle-play"></i>';
+}

@@ -11,6 +11,14 @@
 </head>
 
 <body>
+    <div>
+        <div id="HUD">
+            <div id="score_div">Score: <span id="score">0</span></div>
+            <div id="timer_div">Time: <span id="timer"></span></div>
+            <div id="error_div">Errors: <span id="error">0</span></div>
+        </div>
+    </div>
+
     <div id="cont">
         <div id="text">
 
@@ -21,22 +29,21 @@
         <div id="inp_div">
             <input type="text" id="inp" disabled>
         </div>
-        <div id="HUD">
-            <div id="score_div">Score: <span id="score">0</span></div>
-            <div id="error_div">Errors: <span id="error">0</span></div>
-            <div id="timer_div">Time: <span id="timer"></span></div>
-        </div>
         <div id="start_div">
             <button id="start_btn"><i class="fa-solid fa-circle-play"></i></button>
         </div>
     </div>
 
+
+
     <div id="win">
-        You Won!
+        <h2>You Won!</h2>
+        <input type="button" value="Replay" onclick="resetGame()">
     </div>
 
     <div id="lose">
-        You Lost!
+        <h2>You Lost!</h2>
+        <input type="button" value="Try Again" onclick="resetGame()">
     </div>
 
     <script src="main.js"></script>
