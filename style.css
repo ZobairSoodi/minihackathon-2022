@@ -35,7 +35,8 @@
     font-size: 25px;
 }
 
-#win, #lose {
+#win,
+#lose {
     position: absolute;
     top: 0;
     left: 0;
@@ -49,30 +50,43 @@
     opacity: 0;
 }
 
-#inp_cont{
+#inp_cont {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#HUD{
+#HUD {
     display: flex;
     width: 100%;
     margin-top: 50px;
 }
-#HUD > div{
+
+#HUD>div {
     width: 33%;
     display: flex;
     justify-content: center;
     font-size: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-#score_div{
+
+#score_div {
     color: green;
 }
-#error_div{
+
+#error_div {
     color: red;
 }
-#timer_div{
+
+#timer_div {
     color: blue;
+}
+
+#start_btn {
+    border: none;
+    color: green;
+    font-size: 55px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: transparent;
+    margin-top: 20px;
 }

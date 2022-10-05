@@ -6,7 +6,7 @@ let start_btn = document.querySelector("#start_btn");
 
 let excluded = [9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 36, 37, 38, 39, 40];
 let textObj = [
-    { text: "Hello", time: 60, score: 5 },
+    { text: "Hi Hello", time: 60, score: 5 },
     { text: "Hello, World", time: 60, score: 5 },
     { text: "Hmmmm test", time: 55, score: 10 },
     { text: "I eat cement", time: 55, score: 15 },
@@ -57,38 +57,44 @@ document.body.addEventListener("keypress", (e) => {
 
     inp.value += character;
     var len = inp.value.length - 1;
-    if (text.children[len] != undefined && inp.value[len] == text.innerText[len]) {
-        text.children[len].style.color = "green";
-    }
-    else if (text.children[len] != undefined && inp.value[len].charCodeAt(0) == 32) {
-        inp.value[len] = String.fromCharCode(160);
-        text.children[len].style.backgroundColor = "green";
-    }
-    else if (text.children[len] != undefined) {
-        text.children[len].style.color = "red";
-        error++;
-        error_el.innerHTML = error;
-        if (score > 0) {
-            score--;
-            score_el.innerHTML = score;
+    if (text.children[len] != undefined) {
+        if (inp.value[len].charCodeAt(0) == 32) {
+            var temp_inp = String.fromCharCode(160);
+            if (inp.value[len] == text.innerText[len]) {
+                text.children[len].style.backgroundColor = "green";
+                console.log("ok");
+            }
         }
-    }
-    if (inp.value == currentText) {
-        score += textObj[currentPosition].score;
-        score_el.innerHTML = score;
+        if (inp.value[len] == text.innerText[len]) {
+            text.children[len].style.color = "green";
+        }
+        else {
+            text.children[len].style.color = "red";
+            error++;
+            error_el.innerHTML = error;
+            if (score > 0) {
+                score--;
+                score_el.innerHTML = score;
+            }
+        }
+        if (inp.value == currentText) {
+            score += textObj[currentPosition].score;
+            score_el.innerHTML = score;
 
-        currentPosition++;
-        currentText = textObj[currentPosition].text;
-        time = textObj[currentPosition].time;
-        timer_el.innerHTML = time;
-        fillText();
+            currentPosition++;
+            currentText = textObj[currentPosition].text;
+            time = textObj[currentPosition].time;
+            timer_el.innerHTML = time;
+            fillText();
+        }
     }
 })
 
 document.addEventListener("keyup", (e) => {
     if (e.keyCode == 8) {
-        if (text.children[inp.value.length - 1] != undefined && inp.value[inp.value.length - 1].charCodeAt(0) != 32) {
+        if (text.children[inp.value.length - 1] != undefined) {
             text.children[inp.value.length - 1].style.color = "black";
+            text.children[inp.value.length - 1].style.backgroundColor = "antiquewhite";
         }
         else if (text.children[inp.value.length - 1] != undefined && inp.value[inp.value.length - 1].charCodeAt(0) == 32) {
             inp.value[inp.value.length - 1] = String.fromCharCode(160);
@@ -101,12 +107,12 @@ document.addEventListener("keyup", (e) => {
 
 // Start button
 start_btn.addEventListener("click", () => {
-    if (start_btn.innerHTML == "Pause") {
+    if (pause == false) {
         pause = true;
-        start_btn.innerHTML = "Resume";
+        start_btn.innerHTML = '<i class="fa-solid fa-circle-play"></i>';
     }
     else {
-        start_btn.innerHTML = "Pause";
+        start_btn.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';
         pause = false;
     }
 })
