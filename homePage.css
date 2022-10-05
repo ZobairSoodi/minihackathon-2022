@@ -1,0 +1,87 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.navBar{
+    display: flex;
+    height: 12vh;
+    width: 100%;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 25px rgb(0 0 0 / 15%);
+    margin-bottom: 60px;
+}
+
+
+.imgLogo{
+    width: 60%;
+    padding: 20px;
+}
+.offre{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+}
+
+.offreButton{
+    width: 150px;
+    height:30px;
+    border-radius: 40px;
+    border: none;
+    margin-left: 30px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+}
+
+
+.typingCourse{
+    background-color: white;
+    border: solid 1.5px;
+    color: black;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 60px;
+}
+
+.headerContainer{
+    display: flex;
+    width: 100%;
+}
+
+.leftDiv{
+    display: flex;
+    width: 60%;
+    text-align: center;
+}
+.headerContainerText{
+    max-width: 500px;
+    margin: 16vh 30px ;
+}
+
+.rightDiv{
+    width: 20%;
+}
+
+.headerContainerImg{
+    height: 400px;
+}
+
+
+.main{
+    display: block;
+    height: 70vh;
+}
+
+.firstTitle{
+    margin: 50px 30px;
+    max-width: 300px;
+}
