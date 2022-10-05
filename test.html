@@ -5,57 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <style>
-        #cont {
-            width: 100%;
-            height: 70vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #text {
-            /* display: grid;
-            grid-template-columns: (4,1fr);
-            grid-template-rows: (4, 1fr); */
-        }
-
-        #text span {
-            font-size: 30px;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: 600;
-            display: inline-block;
-            /* padding: 10px; */
-            background-color: antiquewhite;
-            margin-left: 2px;
-        }
-
-        #inp {
-            height: 40px;
-            width: 300px;
-            outline: none;
-            border-radius: 10px;
-            border-color: black;
-            border-style: solid;
-            border-width: 4px;
-            font-size: 25px;
-        }
-
-        #win {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: -10;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            opacity: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -64,105 +15,30 @@
 
         </div>
     </div>
-    <input type="text" id="inp" disabled>
-    <div id="score_div">Score: <span id="score">0</span></div>
-    <div id="error_div">Errors: <span id="error">0</span></div>
+
+    <div id="inp_cont">
+        <div id="inp_div">
+            <input type="text" id="inp" disabled>
+        </div>
+        <div id="HUD">
+            <div id="score_div">Score: <span id="score">0</span></div>
+            <div id="error_div">Errors: <span id="error">0</span></div>
+            <div id="timer_div">Time: <span id="timer"></span></div>
+        </div>
+        <div id="start_div">
+            <button id="start_btn">Start</button>
+        </div>
+    </div>
 
     <div id="win">
         You Won!
     </div>
 
-    <script>
-        let text = document.querySelector("#text");
-        let inp = document.querySelector("#inp");
-        let win = document.querySelector("#win");
-        let score_el = document.querySelector("#score");
-        let error_el = document.querySelector("#error");
-        let excluded = [9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 36, 37, 38, 39, 40];
-        let textObj = ["Hello, World", "dlroW ,olleH", "zobair soodi"];
-        let currentPosition = 0;
-        let currentText = textObj[currentPosition];
-        let score = 0;
-        let error = 0;
+    <div id="lose">
+        You Lost!
+    </div>
 
-        function fillText() {
-            text.innerText = "";
-            inp.value = "";
-            for (let i = 0; i < currentText.length; i++) {
-                var letter = document.createElement("span");
-                if (currentText[i] === " ") {
-                    letter.innerHTML = "&nbsp;";
-                    text.appendChild(letter);
-                    continue;
-                }
-                letter.innerHTML = currentText[i];
-                text.appendChild(letter);
-            }
-        }
-        fillText();
-
-        document.body.addEventListener("keypress", (e) => {
-            if (excluded.includes(Number(e.keyCode))) {
-                return;
-            }
-            var character = String.fromCharCode(e.keyCode);
-
-            inp.value += character;
-            var len = inp.value.length - 1;
-            if (text.children[len] != undefined && inp.value[len] == text.innerText[len]) {
-                text.children[len].style.color = "green";
-            }
-            else if (text.children[len] != undefined) {
-                text.children[len].style.color = "red";
-                error++;
-                error_el.innerHTML = error;
-            }
-            if (inp.value == currentText) {
-                currentPosition++;
-                currentText = textObj[currentPosition];
-                score++;
-                score_el.innerHTML = score;
-                fillText();
-            }
-        })
-
-        document.addEventListener("keyup", (e) => {
-            if (e.keyCode == 8) {
-                if (text.children[inp.value.length - 1] != undefined) {
-                    text.children[inp.value.length - 1].style.color = "black";
-                }
-                inp.value = inp.value.slice(0, -1);
-                return;
-            }
-        })
-
-        // inp.addEventListener("keyup", (e) => {
-        //     if()
-        //     if (excluded.includes(Number(e.keyCode))) {
-        //         return;
-        //     }
-        //     else if(e.keyCode == 8){
-        //         text.children[inp.value.length].style.color = "black";
-        //     }
-        //     else if (inp.value[inp.value.length - 1] == text.innerText[inp.value.length - 1]) {
-        //         text.children[inp.value.length - 1].style.color = "green";
-
-        //     }
-        //     else {
-        //         text.children[inp.value.length - 1].style.color = "red";
-        //     }
-        // })
-
-        // inp.addEventListener("click", ()=>{
-        //     var end = inp.value.length;
-        //     var temp = document.createElement("input");
-        //     document.body.appendChild(temp);
-        //     temp.focus();
-        //     inp.setSelectionRange(end, end);
-        //     inp.focus();
-        //     temp.remove();
-        // })
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
