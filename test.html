@@ -41,6 +41,20 @@
             border-width: 4px;
             font-size: 25px;
         }
+
+        #win {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: -10;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            opacity: 0;
+        }
     </style>
 </head>
 
@@ -51,23 +65,41 @@
         </div>
     </div>
     <input type="text" id="inp" disabled>
+    <div id="score_div">Score: <span id="score">0</span></div>
+    <div id="error_div">Errors: <span id="error">0</span></div>
+
+    <div id="win">
+        You Won!
+    </div>
 
     <script>
         let text = document.querySelector("#text");
         let inp = document.querySelector("#inp");
+        let win = document.querySelector("#win");
+        let score_el = document.querySelector("#score");
+        let error_el = document.querySelector("#error");
         let excluded = [9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 36, 37, 38, 39, 40];
-        t = "hello, world";
+        let textObj = ["Hello, World", "dlroW ,olleH", "zobair soodi"];
+        let currentPosition = 0;
+        let currentText = textObj[currentPosition];
+        let score = 0;
+        let error = 0;
 
-        for (let i = 0; i < t.length; i++) {
-            var letter = document.createElement("span");
-            if (t[i] === " ") {
-                letter.innerHTML = "&nbsp;";
+        function fillText() {
+            text.innerText = "";
+            inp.value = "";
+            for (let i = 0; i < currentText.length; i++) {
+                var letter = document.createElement("span");
+                if (currentText[i] === " ") {
+                    letter.innerHTML = "&nbsp;";
+                    text.appendChild(letter);
+                    continue;
+                }
+                letter.innerHTML = currentText[i];
                 text.appendChild(letter);
-                continue;
             }
-            letter.innerHTML = t[i];
-            text.appendChild(letter);
         }
+        fillText();
 
         document.body.addEventListener("keypress", (e) => {
             if (excluded.includes(Number(e.keyCode))) {
@@ -82,6 +114,15 @@
             }
             else if (text.children[len] != undefined) {
                 text.children[len].style.color = "red";
+                error++;
+                error_el.innerHTML = error;
+            }
+            if (inp.value == currentText) {
+                currentPosition++;
+                currentText = textObj[currentPosition];
+                score++;
+                score_el.innerHTML = score;
+                fillText();
             }
         })
 
