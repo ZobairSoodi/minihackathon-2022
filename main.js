@@ -58,12 +58,8 @@ document.body.addEventListener("keypress", (e) => {
     inp.value += character;
     var len = inp.value.length - 1;
     if (text.children[len] != undefined) {
-        if (inp.value[len].charCodeAt(0) == 32) {
-            var temp_inp = String.fromCharCode(160);
-            if (inp.value[len] == text.innerText[len]) {
-                text.children[len].style.backgroundColor = "green";
-                console.log("ok");
-            }
+        if (inp.value[len].charCodeAt(0) == 32 && text.innerText[len] == String.fromCharCode(160)) {
+            text.children[len].style.backgroundColor = "green";
         }
         if (inp.value[len] == text.innerText[len]) {
             text.children[len].style.color = "green";
