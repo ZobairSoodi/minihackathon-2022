@@ -9,7 +9,7 @@ let textObj = [
     { text: "Hi Hello", time: 60, score: 5 },
     { text: "Hello, World", time: 60, score: 5 },
     { text: "Hmmmm test", time: 55, score: 10 },
-    { text: "I eat cement", time: 55, score: 15 },
+    { text: "I ate an apple", time: 55, score: 15 },
     { text: "I say the truth", time: 50, score: 15 },
     { text: "everything I say is a lie", time: 50, score: 20 },
     { text: "zobair soodi", time: 45, score: 25 },
