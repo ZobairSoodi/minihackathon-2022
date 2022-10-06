@@ -91,8 +91,6 @@ document.body.addEventListener("keypress", (e) => {
         if (inp.value == currentText) {
             score += textObj[currentPosition].score;
             score_el.innerHTML = score;
-            console.log(level);
-            console.log(textObj.length)
 
             if (level == textObj.length) {
                 console.log("won");
