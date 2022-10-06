@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Measure your WPM | fluxTyper</title>
+        <link rel="stylesheet" href="stylesheet/styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;1,700;1,800&display=swap" rel="stylesheet">
+        <link href="https://css.gg/undo.css" rel="stylesheet">
+        <link href="https://css.gg/code-slash.css" rel="stylesheet">
+        <script src="scripts/jquery.js"></script>
+    </head>
+    <body>
+        <div class="bodyCurtain"></div>
+        <div class="bodyContainer">
+            <div class="topNavigation_Container">
+                <!-- <h1>fluxTyper</h1> -->
+                <div class="Right">
+                <!-- > -->
+                    <!-- <div class="Refresh">
+                        <a class="navReload" onclick="reload();"><i class="gg-undo"></i></a>
+                    </div>
+                </div> -->
+            </div>
+            <div class="mainContent_Container">
+                <div class="passage_Container"></div>
+                <div class="passageInput_Container"><input class="passageInput" type="text"/></div>
+                <div class="passageInput_hint">Type above to begin</div>
+                <div class="passageInput_miss">&#10006;</div>
+                <div hidden class="stats_Container" style="display: none;">
+                    <div class="stats">
+                        <div class="header" style="display: none;">Statistics</div>
+                        <div class="baseContent" style="display: none;">
+                            <h1 style="display: none;"><span id="stats_wordsPerMinute">0</span> wpm</h1>
+                            <div class="baseContent_allStats" style="display: none;">
+                                <table>
+                                    <tr>
+                                        <td>Time Remaining</td>
+                                        <td class='right'><span id="stats_timeRemaining">0s</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Words Remaining</td>
+                                        <td class='right'><span id="stats_wordsRemaining">0</span></td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td>Correct Words</td>
+                                        <td class='right'><span id="stats_correctWords">0</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Characters</td>
+                                        <td class='right'><span id="stats_totalChars">0</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Character Accuracy</td>
+                                        <td class='right'><span id="stats_charAcc">0%</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="endgame_Container">
+                    <div class="button" onclick="reload();">Start new test</div>
+                </div>
+            </div>
+            <!-- <div class="footer_Container">
+                <span class="Glyph"><i class="gg-code-slash"></i></span>
+                <span class="Tag">FFFFFF-base16</span>
+                <span class="Github"><img src="images/github.png" /></span>
+            </div> -->
+        </div>
+    </body>
+    <script src="scripts/words.js"></script>
+    <script src="scripts/main.js"></script>
+</html>
