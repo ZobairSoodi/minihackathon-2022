@@ -15,7 +15,7 @@ let textObj = [
     { text: "zobair soodi", time: 45, score: 25 },
     { text: "zobair soodi", time: 40, score: 30 }
 ];
-let difficulty = "normal";
+// let difficulty = "normal";
 textObj.forEach(el => {
     if (difficulty == "normal") {
         el.time = Math.floor(el.time * 0.5);

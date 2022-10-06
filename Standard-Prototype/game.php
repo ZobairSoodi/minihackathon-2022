@@ -11,6 +11,19 @@
 </head>
 
 <body>
+    <script>
+        let difficulty = "<?php 
+            if(isset($_POST["hard"])){
+                echo "hard";
+            }
+            else if(isset($_POST["normal"])){
+                echo "normal";
+            }
+            else{
+                echo "easy";
+            }
+        ?>";
+    </script>
     <div>
         <div id="HUD">
             <div id="score_div">Score: <span id="score">0</span></div>
