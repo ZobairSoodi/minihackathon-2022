@@ -186,6 +186,12 @@
     justify-content: space-around;
 }
 
+.levelButton{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .levelName{
     width: 200px;
     height: 120px;

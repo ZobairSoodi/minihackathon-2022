@@ -41,13 +41,11 @@
         </div>
         <div class="test">
             <div class="tryTest">
-                <p class="testText">Hello, wolcome to SOLITYPING </p>
-                <input type="text" class="inputTest">
+                <p class="testText" id="testText"></p>
+                <input type="text" class="inputTest" id="inputTest">
             </div>
             <div class="errorAndScore">
-                <h2 class="scoureTitl">your score: <span class="score">2</span></h2>
-                <h2 class="errorTitle">you have a: <span class="error">1</span></h2>
-                <h2 class="timeTitle">time: <span class="time">50</span></h2>
+                <h2 class="timeTitle" id="time">time: <span class="time">50</span></h2>
                 
             </div>
         </div>
@@ -58,8 +56,8 @@
         <div class="mainLevel">
             <h2 class="selectLevel">Select your level</h2>
             <div class="levelDiv">
-                <form action="test.html" method="POST">
-                <button id="easy">
+                <form action="game.html" method="POST">
+                <button class="levelButton" id="easy">
                 <div class="levelName">
                     <h4 class="Name">easy:</h4>
                     <p class="descriptionLevel">typing text in 3 min</p>
@@ -67,14 +65,14 @@
             </button>
 
             
-                <button id="">
+                <button class="levelButton" id="">
                     <div class="levelName">
                         <h4 class="Name">medium:</h4>
                         <p class="descriptionLevel">typing text in 2 min</p>
                     </div>
                 </button>
     
-                <button>
+                <button class="levelButton">
                     <div class="levelName">
                         <h4 class="Name">hard:</h4>
                         <p class="descriptionLevel">typing text in 1 min</p>
