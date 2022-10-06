@@ -175,7 +175,96 @@
 
 }
 
-/* .levelDiv{
+.levelDiv{
     display: flex;
     justify-content: space-around;
-} */
+}
+
+.levelName{
+    width: 200px;
+    height: 120px;
+    border-radius: 20px;
+    background-color: #3A82D2;
+    opacity: 78%;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.Name{
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 20px;
+}
+
+
+.descriptionLevel{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+
+.premium{
+    height: 70vh;
+    margin: 30vh 0px 10vh;
+}
+
+.premiumDiv{
+    display: flex;
+    width: 100%;
+}
+
+.leftDiv{
+    width: 50%;
+    margin: 40px;
+}
+
+.rightDiv{
+    width: 50%;
+    align-items: center;
+}
+
+.premiumTeitle{
+    color: #0056A3;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 30px;
+}
+
+.listPremium{
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 60px;
+}
+
+.leftDivImg{
+    height: 400px;
+}
+
+
+
+.footer{
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerDiv{
+    width: 90%;
+}
+
+.socialMedia{
+    width: 15%;
+}
+
+.fa-brands{
+    margin-left: 15px;
+    font-size: 25px;
+}
