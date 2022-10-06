@@ -8,14 +8,14 @@ let excluded = [9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 36, 37, 38, 39, 40];
 let textObj = [
     { text: "Hi Hello", time: 60, score: 5 },
     { text: "Hello, World", time: 60, score: 5 },
-    { text: "Hmmmm test", time: 55, score: 10 },
-    { text: "I ate an apple", time: 55, score: 15 },
-    { text: "I say the truth", time: 50, score: 15 },
-    { text: "everything I say is a lie", time: 50, score: 20 },
-    { text: "zobair soodi", time: 45, score: 25 },
-    { text: "zobair soodi", time: 40, score: 30 }
+    // { text: "Hmmmm test", time: 55, score: 10 },
+    // { text: "I ate an apple", time: 55, score: 15 },
+    // { text: "I say the truth", time: 50, score: 15 },
+    // { text: "everything I say is a lie", time: 50, score: 20 },
+    // { text: "zobair soodi", time: 45, score: 25 },
+    // { text: "zobair soodi", time: 40, score: 30 }
 ];
-let difficulty = "normal";
+// let difficulty = "normal";
 textObj.forEach(el => {
     if (difficulty == "normal") {
         el.time = Math.floor(el.time * 0.5);
@@ -38,6 +38,9 @@ let time = textObj[currentPosition].time;
 timer_el.innerHTML = time;
 
 let pause = true;
+
+let won = false;
+let level = 1;
 
 function fillText() {
     text.innerText = "";
@@ -88,7 +91,20 @@ document.body.addEventListener("keypress", (e) => {
         if (inp.value == currentText) {
             score += textObj[currentPosition].score;
             score_el.innerHTML = score;
+            console.log(level);
+            console.log(textObj.length)
 
+            if (level == textObj.length) {
+                console.log("won");
+                pause = true;
+                win.style.zIndex = 10;
+                win.style.opacity = 1;
+                document.querySelector("#score_end").innerHTML = score;
+                document.querySelector("#error_end").innerHTML = error;
+
+                return;
+            }
+            level++;
             currentPosition++;
             currentText = textObj[currentPosition].text;
             time = textObj[currentPosition].time;
@@ -147,6 +163,7 @@ function resetTimer() {
 
 // Reset the game
 function resetGame() {
+    level = 1;
     // reset text
     currentPosition = 0;
     currentText = textObj[currentPosition].text;

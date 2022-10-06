@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
 }
 
 
@@ -21,6 +22,11 @@
 .imgLogo{
     width: 60%;
     padding: 20px;
+}
+
+
+.logo{
+    height: 100px;
 }
 .offre{
     display: flex;

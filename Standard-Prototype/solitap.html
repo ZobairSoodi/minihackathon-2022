@@ -14,7 +14,7 @@
 
     <nav class="navBar">
         <div class="imgLogo">
-        <img src="images/Soli typingLogo.png" alt="">
+        <img src="images/Soli typingLogo.png" alt="" class="logo">
         </div>
         <div class="offre">
             <button class="offreButton typingCourse">Typing Course</button>
@@ -58,18 +58,30 @@
         <div class="mainLevel">
             <h2 class="selectLevel">Select your level</h2>
             <div class="levelDiv">
+                <form action="./game.php" method="POST">
+                <button name="easy">
                 <div class="levelName">
                     <h4 class="Name">easy:</h4>
                     <p class="descriptionLevel">typing text in 3 min</p>
                 </div>
-                <div class="levelName">
-                    <h4 class="Name">medium:</h4>
-                    <p class="descriptionLevel">typing text in 2 min</p>
-                </div>
-                <div class="levelName">
-                    <h4 class="Name">hard:</h4>
-                    <p class="descriptionLevel">typing text in 1 min</p>
-                </div>
+            </button>
+
+            
+                <button name="normal">
+                    <div class="levelName">
+                        <h4 class="Name">medium:</h4>
+                        <p class="descriptionLevel">typing text in 2 min</p>
+                    </div>
+                </button>
+    
+                <button name="hard">
+                    <div class="levelName">
+                        <h4 class="Name">hard:</h4>
+                        <p class="descriptionLevel">typing text in 1 min</p>
+                    </div>
+    
+                </button>
+            </form>
             </div>
         </div>
     </main>
@@ -100,6 +112,10 @@
             <i class="fa-brands fa-whatsapp"></i>
         </div>
     </footer>
+
+
+
+    <script src="test.js"></script>
 
 </body>
 </html>
