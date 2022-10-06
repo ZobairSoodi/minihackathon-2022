@@ -7,10 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/ab021e0629.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-
-<body>
     <script>
         let difficulty = "<?php
                             if (isset($_POST["hard"])) {
@@ -22,6 +18,11 @@
                             }
                             ?>";
     </script>
+    <title>Document</title>
+</head>
+
+<body>
+    
     <div>
         <div id="HUD">
             <div id="score_div">Score: <span id="score">0</span></div>

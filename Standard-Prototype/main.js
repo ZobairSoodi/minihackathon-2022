@@ -8,14 +8,16 @@ let excluded = [9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 36, 37, 38, 39, 40];
 let textObj = [
     { text: "Hi Hello", time: 60, score: 5 },
     { text: "Hello, World", time: 60, score: 5 },
-    // { text: "Hmmmm test", time: 55, score: 10 },
-    // { text: "I ate an apple", time: 55, score: 15 },
-    // { text: "I say the truth", time: 50, score: 15 },
-    // { text: "everything I say is a lie", time: 50, score: 20 },
-    // { text: "zobair soodi", time: 45, score: 25 },
-    // { text: "zobair soodi", time: 40, score: 30 }
+    { text: "Hmmmm test", time: 55, score: 10 },
+    { text: "I ate an apple", time: 55, score: 15 },
+    { text: "I say the truth", time: 50, score: 15 },
+    { text: "everything I say is a lie", time: 50, score: 20 },
+    { text: "zobair soodi", time: 45, score: 25 },
+    { text: "zobair soodi", time: 40, score: 30 }
 ];
-// let difficulty = "normal";
+
+// Set the time for each text object
+// depending on the difficulty chosen
 textObj.forEach(el => {
     if (difficulty == "normal") {
         el.time = Math.floor(el.time * 0.5);
@@ -24,6 +26,7 @@ textObj.forEach(el => {
         el.time = Math.floor(el.time * 0.25);
     }
 });
+
 let currentPosition = 0;
 let currentText = textObj[currentPosition].text;
 
@@ -42,6 +45,7 @@ let pause = true;
 let won = false;
 let level = 1;
 
+// fill the text area with the current text object
 function fillText() {
     text.innerText = "";
     inp.value = "";
@@ -58,6 +62,7 @@ function fillText() {
 }
 fillText();
 
+// key detection and processing
 document.body.addEventListener("keypress", (e) => {
     if (pause == true) {
         return;
@@ -65,22 +70,29 @@ document.body.addEventListener("keypress", (e) => {
     if (excluded.includes(Number(e.keyCode))) {
         return;
     }
+
+    // convert the detected keyCode into the corresponding character
     var character = String.fromCharCode(e.keyCode);
 
     inp.value += character;
-    var len = inp.value.length - 1;
-    if (text.children[len] != undefined) {
-        if (inp.value[len].charCodeAt(0) == 32 && text.innerText[len] == String.fromCharCode(160)) {
-            text.children[len].style.backgroundColor = "green";
+    var index = inp.value.length - 1;
+    if (text.children[index] != undefined) {
+
+        // turn bg color green if the player gets a space character right
+        if (inp.value[index].charCodeAt(0) == 32 && text.innerText[index] == String.fromCharCode(160)) {
+            text.children[index].style.backgroundColor = "green";
         }
-        else if (inp.value[len].charCodeAt(0) != 32 && text.innerText[len] == String.fromCharCode(160)) {
-            text.children[len].style.backgroundColor = "red";
+        // turn bg color red if the player gets a space character wrong
+        else if (inp.value[index].charCodeAt(0) != 32 && text.innerText[index] == String.fromCharCode(160)) {
+            text.children[index].style.backgroundColor = "red";
         }
-        else if (inp.value[len] == text.innerText[len]) {
-            text.children[len].style.color = "green";
+        // turn color green if the player gets any other character right
+        else if (inp.value[index] == text.innerText[index]) {
+            text.children[index].style.color = "green";
         }
+        // turn color red if the player gets any other character wrong
         else {
-            text.children[len].style.color = "red";
+            text.children[index].style.color = "red";
             error++;
             error_el.innerHTML = error;
             if (score > 0) {
@@ -88,10 +100,13 @@ document.body.addEventListener("keypress", (e) => {
                 score_el.innerHTML = score;
             }
         }
+
+        // go to next level/word if the player has typed the current word correctly
         if (inp.value == currentText) {
             score += textObj[currentPosition].score;
             score_el.innerHTML = score;
 
+            // show the win interface if the player finishes the game/ completes all the words
             if (level == textObj.length) {
                 console.log("won");
                 pause = true;
@@ -112,6 +127,8 @@ document.body.addEventListener("keypress", (e) => {
     }
 })
 
+// handle the backspace key event. in other words, if the player 
+// presses "backspace" it will remove the last character from the input
 document.addEventListener("keyup", (e) => {
     if (e.keyCode == 8) {
         if (text.children[inp.value.length - 1] != undefined) {
@@ -127,7 +144,7 @@ document.addEventListener("keyup", (e) => {
     }
 })
 
-// Start button
+// Start the game when the button is pressed
 start_btn.addEventListener("click", () => {
     if (pause == false) {
         pause = true;
@@ -146,7 +163,7 @@ start_btn.addEventListener("click", () => {
 // execute the timer function every second
 setInterval(resetTimer, 1000);
 
-// Reset timer
+// Reset timer function
 function resetTimer() {
     if (pause) {
         return;
