@@ -151,7 +151,7 @@ start_btn.addEventListener("click", () => {
         start_btn.innerHTML = '<i class="fa-solid fa-circle-play"></i>';
     }
     else {
-        start_btn.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';
+        start_btn.innerHTML = '<i class="fa-solid fa-cicle-pause"></i>';
         pause = false;
     }
     var temp_btn = document.createElement("button");
