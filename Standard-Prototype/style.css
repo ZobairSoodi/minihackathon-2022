@@ -41,6 +41,7 @@
     top: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: -10;
@@ -49,6 +50,7 @@
     background-color: white;
     opacity: 0;
 }
+
 
 #inp_cont {
     display: flex;
@@ -79,14 +81,36 @@
 }
 
 #timer_div {
-    color: blue;
+    color: #3A82D2;
 }
 
 #start_btn {
     border: none;
-    color: green;
+    color: #3A82D2;
     font-size: 55px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: transparent;
     margin-top: 20px;
+}
+
+#try_again{
+    border-radius: 20px;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #3A82D2;
+    opacity: 78%;
+    color: white;
+    padding: 10px 20px;
+    font-size: 25px;
+}
+
+#replay{
+    border-radius: 20px;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #3A82D2;
+    opacity: 78%;
+    color: white;
+    padding: 10px 20px;
+    font-size: 25px;
 }

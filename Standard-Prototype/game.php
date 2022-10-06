@@ -11,6 +11,17 @@
 </head>
 
 <body>
+    <script>
+        let difficulty = "<?php
+                            if (isset($_POST["hard"])) {
+                                echo "hard";
+                            } else if (isset($_POST["normal"])) {
+                                echo "normal";
+                            } else {
+                                echo "easy";
+                            }
+                            ?>";
+    </script>
     <div>
         <div id="HUD">
             <div id="score_div">Score: <span id="score">0</span></div>
@@ -38,12 +49,20 @@
 
     <div id="win">
         <h2>You Won!</h2>
-        <input type="button" value="Replay" onclick="resetGame()">
+        <div>
+            <p>Score: <span id="score_end"></span></p>
+            <p>Errors: <span id="error_end"></span></p>
+        </div>
+        <input id="replay" type="button" value="Replay" onclick="resetGame()">
     </div>
 
     <div id="lose">
         <h2>You Lost!</h2>
-        <input type="button" value="Try Again" onclick="resetGame()">
+        <div>
+            <p>Score: <span id="score_end"></span></p>
+            <p>Errors: <span id="error_end"></span></p>
+        </div>
+        <input id="try_again" type="button" value="Try Again" onclick="resetGame()">
     </div>
 
     <script src="main.js"></script>
