@@ -6,14 +6,16 @@ let start_btn = document.querySelector("#start_btn");
 
 let excluded = [9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 36, 37, 38, 39, 40];
 let textObj = [
-    { text: "Hi Hello", time: 60, score: 5 },
+    { text: "Hello", time: 60, score: 5 },
     { text: "Hello, World", time: 60, score: 5 },
-    { text: "Hmmmm test", time: 55, score: 10 },
+    { text: "dlroW ,olleH", time: 55, score: 10 },
     { text: "I ate an apple", time: 55, score: 15 },
     { text: "I say the truth", time: 50, score: 15 },
     { text: "everything I say is a lie", time: 50, score: 20 },
-    { text: "zobair soodi", time: 45, score: 25 },
-    { text: "zobair soodi", time: 40, score: 30 }
+    { text: "Nothing thats worth anything is easy", time: 45, score: 25 },
+    { text: "You never fail until you stop trying", time: 40, score: 30 },
+    { text: "Pain is temporary. Quitting lasts forever", time: 35, score: 35 },
+    { text: "The secret of getting ahead is getting started", time: 30, score: 40 } 
 ];
 
 // Set the time for each text object
@@ -67,9 +69,9 @@ document.body.addEventListener("keypress", (e) => {
     if (pause == true) {
         return;
     }
-    if (excluded.includes(Number(e.keyCode))) {
-        return;
-    }
+    // if (excluded.includes(Number(e.keyCode))) {
+    //     return;
+    // }
 
     // convert the detected keyCode into the corresponding character
     var character = String.fromCharCode(e.keyCode);

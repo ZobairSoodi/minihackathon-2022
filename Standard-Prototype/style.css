@@ -26,7 +26,9 @@
 
 #inp {
     height: 40px;
-    width: 300px;
+    width: 800px;
+    display: inline-block;
+    text-align: center;
     outline: none;
     border-radius: 10px;
     border-color: black;
