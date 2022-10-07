@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/ab021e0629.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/955adab269.js" crossorigin="anonymous"></script>
     <script>
         let difficulty = "<?php
                             if (isset($_POST["hard"])) {
