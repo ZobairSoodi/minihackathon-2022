@@ -169,6 +169,10 @@
 
 .mainLevel{
     width: 120vh;
+    display: none;
+}
+.active{
+    display: block;
 }
 
 .selectLevel{
