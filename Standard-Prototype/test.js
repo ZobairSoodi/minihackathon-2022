@@ -25,10 +25,12 @@ function showText(){
 }
 
 showText();
-        
+        let mainLevel = document.getElementById("mainLevel");
+
 inputTest.addEventListener("keyup", ()=>{
       if(inputTest.value === text){
         window.scrollBy(0, 430);
+        mainLevel.style.display = "block";
     }
 })
 
